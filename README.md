@@ -38,7 +38,9 @@
 
 ## 📁 Git commit format
 * Add
-Use when add new feature/update
+Use when add new feature
+* Update
+Use when update feature
 * Fix
 Use when fix some bug/error
 * Remove

@@ -19,7 +19,7 @@ $matkul = mysqli_query($connection, "SELECT kode_matkul,nama_matkul FROM matakul
           <form action="./store.php" method="POST">
             <table cellpadding="8" class="w-100">
               <tr>
-                <td>NIM</td>
+                <td>Nama Mahasiswa</td>
                 <td>
                   <select class="form-control" name="nim" id="nim" required>
                     <option value="">--Pilih Mahasiswa--</option>

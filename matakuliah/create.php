@@ -25,7 +25,7 @@ require_once '../helper/connection.php';
               </tr>
               <tr>
                 <td>SKS</td>
-                <td><input class="form-control" type="text" name="sks"></td>
+                <td><input class="form-control" type="number" max="6" name="sks"></td>
               </tr>
               <tr>
                 <td>

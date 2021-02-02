@@ -32,7 +32,7 @@ $query = mysqli_query($connection, "SELECT * FROM matakuliah WHERE kode_matkul='
                 </tr>
                 <tr>
                   <td>SKS</td>
-                  <td><input class="form-control" type="number" name="sks" required value="<?= $row['sks'] ?>"></td>
+                  <td><input class="form-control" type="number" name="sks" max="6" required value="<?= $row['sks'] ?>"></td>
                 </tr>
                 <tr>
                   <td>

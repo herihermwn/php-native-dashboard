@@ -74,7 +74,7 @@ $matkul = mysqli_query($connection, "SELECT kode_matkul,nama_matkul FROM matakul
                 </tr>
                 <tr>
                   <td>Nilai</td>
-                  <td><input class="form-control" type="number" name="nilai" max="3" value="<?= $row['nilai'] ?>"></td>
+                  <td><input class="form-control" type="number" name="nilai" max="100" value="<?= $row['nilai'] ?>"></td>
                 </tr>
                 <tr>
                   <td>

@@ -9,9 +9,10 @@
 
 ## 📸 Demo Web
 <pre>
+<img src="data/demo/login-page.png" width="1200">
 <img src="data/demo/dashboard.png" width="1200">
 <img src="data/demo/add-data.png" width="1200"> 
-<img src="data/demo/view-data.png" width="1200"> 
+<img src="data/demo/view-data.png" width="1200">
 </pre>
 
 ## 📁 Direktori

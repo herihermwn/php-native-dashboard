@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 12, 2021 at 01:30 PM
+-- Generation Time: Feb 02, 2021 at 01:41 PM
 -- Server version: 10.4.17-MariaDB
--- PHP Version: 7.4.13
+-- PHP Version: 7.4.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `stmikids`
+-- Database: `stmik_ids`
 --
 
 -- --------------------------------------------------------
@@ -34,6 +34,13 @@ CREATE TABLE `dosen` (
   `alamat_dosen` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `dosen`
+--
+
+INSERT INTO `dosen` (`nidn`, `nama_dosen`, `jenkel_dosen`, `alamat_dosen`) VALUES
+('100001', 'Heri Hermawan', 'Pria', 'Entah');
+
 -- --------------------------------------------------------
 
 --
@@ -41,9 +48,17 @@ CREATE TABLE `dosen` (
 --
 
 CREATE TABLE `login` (
+  `id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`id`, `username`, `password`) VALUES
+(1, 'admin', '123456');
 
 -- --------------------------------------------------------
 
@@ -57,10 +72,17 @@ CREATE TABLE `mahasiswa` (
   `jenis_kelamin` varchar(10) NOT NULL,
   `kota_kelahiran` varchar(30) NOT NULL,
   `tanggal_kelahiran` varchar(20) NOT NULL,
-  `alamat` varchar(60) NOT NULL,
+  `alamat` text NOT NULL,
   `program_studi` varchar(20) NOT NULL,
   `tahun_masuk` varchar(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mahasiswa`
+--
+
+INSERT INTO `mahasiswa` (`nim`, `nama`, `jenis_kelamin`, `kota_kelahiran`, `tanggal_kelahiran`, `alamat`, `program_studi`, `tahun_masuk`) VALUES
+('1911010001', 'Heri Hermawan', 'Pria', 'Entah', '1990-01-01', 'Entah', 'Teknik Informatika', '2019');
 
 -- --------------------------------------------------------
 
@@ -74,6 +96,13 @@ CREATE TABLE `matakuliah` (
   `sks` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `matakuliah`
+--
+
+INSERT INTO `matakuliah` (`kode_matkul`, `nama_matkul`, `sks`) VALUES
+('111', 'Pemrograman Web Dasar', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -81,11 +110,19 @@ CREATE TABLE `matakuliah` (
 --
 
 CREATE TABLE `nilai` (
+  `id` int(11) NOT NULL,
   `nim` varchar(12) NOT NULL,
   `kode_matkul` varchar(12) NOT NULL,
-  `semester` varchar(1) NOT NULL,
-  `nilai` varchar(1) NOT NULL
+  `semester` int(2) NOT NULL,
+  `nilai` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `nilai`
+--
+
+INSERT INTO `nilai` (`id`, `nim`, `kode_matkul`, `semester`, `nilai`) VALUES
+(5, '1911010001', '111', 3, 90);
 
 --
 -- Indexes for dumped tables
@@ -101,7 +138,7 @@ ALTER TABLE `dosen`
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `mahasiswa`
@@ -119,7 +156,23 @@ ALTER TABLE `matakuliah`
 -- Indexes for table `nilai`
 --
 ALTER TABLE `nilai`
-  ADD PRIMARY KEY (`nim`);
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `nilai`
+--
+ALTER TABLE `nilai`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

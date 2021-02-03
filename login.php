@@ -72,6 +72,13 @@ if (isset($_POST['submit'])) {
                   </div>
 
                   <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
+                      <label class="custom-control-label" for="remember-me">Ingat Saya</label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
                     <button name="submit" type="submit" class="btn btn-primary btn-lg btn-block" tabindex="3">
                       Login
                     </button>
